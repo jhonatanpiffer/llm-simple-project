@@ -12,7 +12,8 @@ echo "Servidor Ollama está pronto."
 
 # Baixa o modelo especificado
 echo "Baixando o modelo tinyllama..."
-ollama pull tinyllama
+#ollama pull tinyllama
+ollama pull llama3.2
 
 # Mantém o processo principal do Ollama em execução em primeiro plano
 wait

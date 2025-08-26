@@ -5,3 +5,4 @@ ollama
 normality
 pytest
 python-dotenv
+dspy
