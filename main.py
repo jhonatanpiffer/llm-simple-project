@@ -41,12 +41,11 @@ except Exception as e:
 class ExtractIncidentSignature(dspy.Signature):
     """Extrai informações estruturadas de um texto de incidente."""
 
-    text: str = dspy.InputField(desc="Descrição textual do incidente.")
-    date: str = dspy.OutputField(desc="Data e hora do incidente (se presente no texto)")
-    local: str = dspy.OutputField(desc="Local do incidente")
-    tipo: str = dspy.OutputField(desc="Tipo ou categoria do incidente")
-    impacto: str = dspy.OutputField(desc="Descrição breve do impacto gerado")
-
+    text: str = dspy.InputField(desc="Textual description of the incident.")
+    date: str = dspy.OutputField(desc="Date and time of the incident")
+    local: str = dspy.OutputField(desc="Location of the incident")
+    tipo: str = dspy.OutputField(desc="Type or category of the incident")
+    impacto: str = dspy.OutputField(desc="Brief description of the generated impact")
 # --- Otimização do Módulo DSPy (Compilação Única) ---
 
 # Cria um módulo "Predict" do DSPy com a assinatura que definimos.
@@ -69,7 +68,6 @@ optimized_incident_extractor = teleprompter.compile(incident_extractor, trainset
 logger.info("Módulo DSPy compilado e otimizado com sucesso.")
 
 # --- Fim da Configuração e Otimização ---
-
 
 def preprocess_text(text: str) -> str:
     """
